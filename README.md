@@ -2,7 +2,7 @@
 
 Explicar porqué los siguientes algoritmos tienen la complejidad correspondiente
 
-Busqueda binaria: logarítmica
+Búsqueda binaria: logarítmica
 
 El algoritmo de búsqueda binaria tiene complejidad logarítmica O(log n) porque empieza comparando el elemento central de la lista con el valor buscado, y en cada paso se va descartando la mitad de la lista hasta llegar al elemento deseado.
 De esta forma, el espacio de soluciones se reduce a la mitad en cada iteración.
@@ -14,6 +14,7 @@ Siempre se cumple que:
 log (en base 2) de N < N
 
 En el caso que N = 100, log (en base 2) 100 = 6.64
+
 Esto significa que para encontrar cualquier elemento en una lista ordenada de 100 elementos, como máximo se requiere 7 operaciones.
 
 Es indispensable que la lista está ordenada ascendentemente para que el algoritmo funcione.
