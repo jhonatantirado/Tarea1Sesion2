@@ -39,6 +39,44 @@ Es indispensable que la lista está ordenada ascendentemente para que el algorit
 
 Serie Fibonacci: exponencial
 
+El algoritmo de la serie Fibonacci es de complejidad exponencial, porque para calcular la secuencia para N elementos, se deben efectuar más de N operaciones. O sea, su eficiencia ni siquiera es lineal O(N)
+De hecho, requiere aproximadamente 2 ^ N.
+Esto se debe PRINCIPALMENTE a que se deben RECALCULAR los mismos elementos varias veces.
+
+Por ejemplo:
+
+Si N=6, o sea F(6), se requiere calcular F(5) y F(4).
+
+Para calcular F(5), se debe calcular F(4) y F(3)
+Para calcular F(4), se debe calcular F(3) y F(2)
+Para calcular F(3), se debe calcular F(2) y F(1)
+F(1) = 0 y F(2) = 1
+
+Esto es solo para la primera rama F(5).
+
+Ahora hay que hacer lo mismo para la primera rama F(4).
+
+F(1) se debe calcular 3 veces
+F(2) 5 veces
+F(3) 3 veces
+F(4) 2 veces
+F(5) 1 vez
+
+En total, son 14 operaciones.
+Además, hay que sumar F(N-1) y F(N-2) como máximo 14 veces.
+Suman 28 operaciones.
+Además, la comparación del caso base cuando N es 1 o 2, como máximo 14 veces.
+Suman 42 operaciones.
+Lo mismo para N menor que 0.
+Suman 56 operaciones.
+
+En este caso, en el peor de los casos, se deben efectuar aproximadamente 2 ^ N = 2 ^ 6 = 64 operaciones para calcular el resultado.
+
+Cómo se ve, la mayoría de cálculos requeridos para F(4) ya han sido calculados para F(5) pero tiene que realizarse de nuevo para F(4) ya que no han sido guardados en memoria. 
+Esto es claramente ineficiente.
+
+
+
       //Complejidad Exponencial O(2^N)
 	    public static long fibonacciExponencial(int n)  {
             if (n < 0) {
